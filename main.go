@@ -1,7 +1,15 @@
 package main
 
-import "fmt"
+import (
+  "fmt"
+  "flag"
+)
 
 func main() {
-  fmt.Println("Marksimple")
+  markdownDir := flag.String("markdown-dir", ".",
+  "Path to directory containing Markdown files to be converted into HTML")
+
+  flag.Parse()
+
+  fmt.Println("markdown-dir:", *markdownDir)
 }
